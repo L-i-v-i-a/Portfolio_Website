@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Ovo&family=Outfit:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&.dark, .dark &);
+
+/* Root variables */
+:root {
+   --lightHover-rgb: 252, 244, 255;
+  --darkHover--: #2a004a;
+  --darkTheme--: #11001F;
+  --lightHover--: #fcf4ff;
+  --darkHover-rgb: 42, 0, 74;  
+
+  --outfit--: 'Outfit', sans-serif;
+  --ovo--: 'Ovo', serif;
+
+  --black-shadow--: 4px 4px 0 #000;
+  --white-shadow--: 4px 4px 0 #fff;
+
+  --auto-grid--: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Default font */
+* {
+  font-family: var(--outfit--);
+}
+
+.font-ovo {
+  font-family: var(--ovo--);
+}
+
+/* Tailwind theme variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
