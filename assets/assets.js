@@ -89,9 +89,9 @@ export const workData = [
     {
         name: 'Landivia',
         title: 'Mobile App',
-        description: 'A modern mobile application for property listings and rentals.',
-        details: 'Landivia is a mobile platform that helps users search, view, and book rental properties with ease. It includes real-time chat with property owners, location-based search, and secure payment integration.',
-        languages: ['React Native', 'JavaScript', 'Node.js', 'MongoDB', 'Firebase'],
+        description: 'A modern mobile application that provides AI powered solution for predicting prices of land across Nigeria.',
+        details: 'Landivia is a mobile platform that the user just needs to provide a few information and get the price of a land including its distance from schools, hospitals, and markets and also their and estimated time to get there. It also provides a map representation and you can always view your past predictions.',
+        languages: ['React Native', 'Flask', 'MongoDB'],
         bgImage: '/work-1.jpg',
         video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
         link: ''
@@ -99,9 +99,9 @@ export const workData = [
     {
         name: 'Customer',
         title: 'Web App',
-        description: 'A responsive and interactive web platform.',
-        details: 'This web app is designed to provide an intuitive user experience for managing and tracking tasks. It includes dashboards, analytics, and team collaboration features.',
-        languages: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB'],
+        description: 'This is an eccomerce platform that monitors the behaviour of the customers in order to provide personalized recommendations',
+        details: 'This web app is designed to provide an intuitive user experience. It includes monitoring th users cart and giving the user some good combo deals, alerting the user when stock is low for an items they normally purchase or have as favourite. Alert users on new products reating to what they love.',
+        languages: ['React.js', 'Next.js', 'Flask', 'Apori Alogrithm', 'MongoDB'],
         bgImage: '/work-5.png',
         video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
         link: ''
@@ -109,9 +109,9 @@ export const workData = [
     {
         name: 'Zempaa',
         title: 'Backend Projects',
-        description: 'A robust backend solution for high-scale applications.',
-        details: 'Zempaa is a backend architecture built for high-performance APIs with authentication, data management, and analytics. It supports real-time data streaming and cloud deployment.',
-        languages: ['Node.js', 'Express.js', 'MongoDB', 'Redis', 'AWS'],
+        description: 'This is an eccomerce platform that provides various AI solutions',
+        details: 'Zempaa has an AI chat bot called ZAI. ZAI is not like your normal AI chatbot, It answers general questions and relates them back to the web app. It also uses both text and voice commands and helps the users in cart enagements, finding products, placing orders and navigating through the site',
+        languages: [ 'Django', 'open AI', 'Next.js'],
         bgImage: '/work-6.png',
         video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
         link: 'https://zempaa.com'
@@ -119,41 +119,20 @@ export const workData = [
     {
         name: 'AI Model Training',
         title: 'Price Prediction',
-        description: 'Building and fine-tuning AI models for specific tasks.',
-        details: 'This project focuses on training AI models for computer vision and natural language processing tasks. It uses advanced deep learning frameworks to create accurate and efficient models.',
+        description: 'This is an AI model that was trained with XGBoost, a machine learning algorithm',
+        details: 'This project focused on the training of the model with over 100000 values of a land price dataset to achieve an accuracy of 98% whixh means it is quite reliable',
         languages: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'],
         bgImage: '/work-7.png',
         video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
         link: ''
-    },
-    {
-        name: 'AI Model Training',
-        title: 'Price Prediction',
-        description: 'Building and fine-tuning AI models for specific tasks.',
-        details: 'This project focuses on training AI models for computer vision and natural language processing tasks. It uses advanced deep learning frameworks to create accurate and efficient models.',
-        languages: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'],
-        bgImage: '/work-7.png',
-        video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
-        link: ''
-    },
-    {
-        name: 'AI Model Training',
-        title: 'Price Prediction',
-        description: 'Building and fine-tuning AI models for specific tasks.',
-        details: 'This project focuses on training AI models for computer vision and natural language processing tasks. It uses advanced deep learning frameworks to create accurate and efficient models.',
-        languages: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'],
-        bgImage: '/work-7.png',
-        video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
-        link: ''
-    },
+    }
 ];
-
 
 export const serviceData = [
   { 
     icon: assets.web_icon, 
     title: 'Web design', 
-    description: 'Web development is the process of building, programming...', 
+    description: 'Web development is the process of building, programming', 
     details: 'We create responsive, SEO-friendly websites tailored to client needs, ensuring optimal performance across devices and browsers. Our design approach focuses on user experience, accessibility, and scalability.', 
     tools: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Node.js', 'Figma'], 
     link: '' 
@@ -161,7 +140,7 @@ export const serviceData = [
   { 
     icon: assets.mobile_icon, 
     title: 'Mobile app', 
-    description: 'Mobile app development involves creating software for mobile devices...', 
+    description: 'Mobile app development involves creating software for mobile devices', 
     details: 'We build cross-platform mobile apps that are fast, secure, and user-friendly. Our process covers wireframing, UI/UX design, API integration, and deployment to app stores.', 
     tools: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase'], 
     link: '' 
@@ -169,7 +148,7 @@ export const serviceData = [
   { 
     icon: assets.ui_icon, 
     title: 'Training AI Models', 
-    description: 'Training AI models involves teaching algorithms to recognize patterns...', 
+    description: 'Training AI models involves teaching algorithms to recognize patterns', 
     details: 'We specialize in building, training, and fine-tuning AI models for tasks such as image recognition, natural language processing, and recommendation systems using advanced machine learning techniques.', 
     tools: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'], 
     link: '' 
@@ -221,7 +200,7 @@ export const reviewsData = [
   {
     name: 'Daniel Kim',
     ratings: 4,
-    reviews: 'Good overall, but the interface was a bit confusing.',
+    reviews: 'It was an exciting journey always delivering more than expected.',
     image: assets.user4,
   },
   {
