@@ -63,8 +63,7 @@ const visibleProjects = getVisibleProjects();
           transition={{ duration: 0.5, delay: 0.7 }}
           className='text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo'
         >
-          I am a FullStack Developer and Machine Learning Expert Based in Nigeria with 6 years of experience developing multiple applications
-          by collaborating with various teams of developers
+         With 6 years of experience in the industry, I have honed my skills in developing high-quality applications that meet the needs of clients and users alike.
         </motion.p>
 
         <motion.div
