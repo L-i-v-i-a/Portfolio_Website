@@ -38,8 +38,7 @@ const Service = ({isDarkMode}) => {
           transition={{ duration: 0.5, delay: 0.7 }}
           className='text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo'
         >
-          I am a FullStack Developer and Machine Learning Expert Based in Nigeria with 6 years of experience developing multiple applications
-          by collaborating with various teams of developers
+          This are the services that I offer 
         </motion.p>
 
         <motion.div
