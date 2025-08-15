@@ -142,7 +142,31 @@ export const workData = [
     ],
     video: 'https://drive.google.com/file/d/1hSuFJgJQbNK8Ve09DFPK_WO6t140NizV/view?usp=drive_link',
     link: ''
-  }
+  },
+  {
+  name: 'Livia',
+  title: 'E-commerce Web Application',
+  description: 'Livia is a fully functional e-commerce platform built using the MERN stack.',
+  details: 'This project is a complete full-stack e-commerce solution that allows users to browse products, add them to their cart, and securely checkout. The backend is powered by Node.js and Express, with MongoDB as the database for storing products, user data, and order details. The frontend is developed in React.js, offering a modern and responsive interface for an enhanced shopping experience. Features include product search and filtering, user authentication, order tracking, and an admin dashboard for managing inventory and sales. Designed with scalability in mind, Livia provides a seamless and efficient shopping experience for both customers and administrators.',
+  languages: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JavaScript', 'HTML', 'CSS'],
+  bgImage: '/work-livia.png',
+  images: ['/work-livia.png', '/work-livia1.png'],
+  video: '',
+  link: ''
+}
+{
+  name: 'Umuahia',
+  title: 'Community Management Web Interface',
+  description: 'Umuahia is a community-focused web application frontend built with HTML, CSS, and JavaScript.',
+  details: 'This project provides a user-friendly interface for community members and administrators to monitor activities, track member records, and manage meeting minutes. Designed entirely with HTML, CSS, and vanilla JavaScript, the frontend offers interactive dashboards, tables for viewing and searching member lists, and sections for logging meeting agendas and outcomes. The interface is optimized for accessibility and responsiveness, ensuring smooth use on both desktop and mobile devices. Its simple, lightweight design allows for easy integration with any backend system, making it adaptable to various community management needs.',
+  languages: ['HTML', 'CSS', 'JavaScript'],
+  bgImage: '/work-8.png',
+  images: ['/work-8a.png', '/work-8b.png', '/work-8c.png'],
+  video: '',
+  link: ''
+}
+
+
 ];
 
 export const serviceData = [
