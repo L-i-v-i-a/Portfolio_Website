@@ -93,17 +93,17 @@ export const workData = [
         details: 'Landivia is a mobile platform that the user just needs to provide a few information and get the price of a land including its distance from schools, hospitals, and markets and also their and estimated time to get there. It also provides a map representation and you can always view your past predictions.',
         languages: ['React Native', 'Flask', 'MongoDB'],
         bgImage: '/work-1.jpg',
-        video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
+        video: 'https://drive.google.com/file/d/1_b0OABx3tJ52DIMzLjPolXdZDvGo_Qyq/view?usp=drive_link',
         link: ''
     },
     {
-        name: 'Customer',
+        name: 'JScan',
         title: 'Web App',
-        description: 'This is an eccomerce platform that monitors the behaviour of the customers in order to provide personalized recommendations',
-        details: 'This web app is designed to provide an intuitive user experience. It includes monitoring th users cart and giving the user some good combo deals, alerting the user when stock is low for an items they normally purchase or have as favourite. Alert users on new products reating to what they love.',
-        languages: ['React.js', 'Next.js', 'Flask', 'Apori Alogrithm', 'MongoDB'],
+        description: 'This is web app that helps doctors detect breast cancer in women',
+        details: 'This web app is designed to provide an intuitive user experience. The doctor just needs to provide the mammogram image, and the app will analyze it using advanced algorithms to detect any signs of breast cancer.',
+        languages: ['Django', 'Python', 'Random Forest', 'PostgreSQL'],
         bgImage: '/work-5.png',
-        video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
+        video: 'https://drive.google.com/file/d/1v24CYIHuVHYu2xLqGfQZa9j3jN5d1GDE/view?usp=drive_link',
         link: ''
     },
     {
@@ -123,7 +123,7 @@ export const workData = [
         details: 'This project focused on the training of the model with over 100000 values of a land price dataset to achieve an accuracy of 98% whixh means it is quite reliable',
         languages: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'],
         bgImage: '/work-7.png',
-        video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
+        video: '',
         link: ''
     }
 ];
