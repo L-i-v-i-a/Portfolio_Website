@@ -153,7 +153,7 @@ export const workData = [
   images: ['/work-livia.png', '/work-livia1.png'],
   video: '',
   link: ''
-}
+},
 {
   name: 'Umuahia',
   title: 'Community Management Web Interface',
