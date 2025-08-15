@@ -156,7 +156,7 @@ export const workData = [
 },
 {
   name: 'Umuahia',
-  title: 'Community Management Web Interface',
+  title: 'Management System',
   description: 'Umuahia is a community-focused web application frontend built with HTML, CSS, and JavaScript.',
   details: 'This project provides a user-friendly interface for community members and administrators to monitor activities, track member records, and manage meeting minutes. Designed entirely with HTML, CSS, and vanilla JavaScript, the frontend offers interactive dashboards, tables for viewing and searching member lists, and sections for logging meeting agendas and outcomes. The interface is optimized for accessibility and responsiveness, ensuring smooth use on both desktop and mobile devices. Its simple, lightweight design allows for easy integration with any backend system, making it adaptable to various community management needs.',
   languages: ['HTML', 'CSS', 'JavaScript'],
