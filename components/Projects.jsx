@@ -1,6 +1,6 @@
 import { assets, workData } from '@/assets/assets';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "motion/react";
 
 const Projects = ({ isDarkMode }) => {
@@ -28,6 +28,18 @@ const Projects = ({ isDarkMode }) => {
   };
 
   const visibleProjects = getVisibleProjects();
+
+{/* inside your component */}
+useEffect(() => {
+  if (selectedProject?.images?.length > 1) {
+    const interval = setInterval(() => {
+      handleNextImage();
+    }, 3000); // change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }
+}, [selectedProject, currentImageIndex]);
+
 
   const handleNextImage = () => {
     if (!selectedProject?.images) return;
