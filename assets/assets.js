@@ -123,7 +123,7 @@ export const workData = [
         details: 'This project focused on the training of the model with over 100000 values of a land price dataset to achieve an accuracy of 98% whixh means it is quite reliable',
         languages: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'],
         bgImage: '/work-7.png',
-        video: '',
+        video: 'https://drive.google.com/file/d/1hSuFJgJQbNK8Ve09DFPK_WO6t140NizV/view?usp=drive_link',
         link: ''
     }
 ];
