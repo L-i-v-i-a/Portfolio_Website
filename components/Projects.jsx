@@ -7,29 +7,41 @@ const Projects = ({ isDarkMode }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 4;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
- const handleShowMore = () => {
-  let nextIndex = currentIndex + itemsPerPage;
-  if (nextIndex >= workData.length) {
-    nextIndex = 0; // loop back to start
-  }
-  setCurrentIndex(nextIndex);
-};
+  const handleShowMore = () => {
+    let nextIndex = currentIndex + itemsPerPage;
+    if (nextIndex >= workData.length) {
+      nextIndex = 0; // loop back to start
+    }
+    setCurrentIndex(nextIndex);
+  };
 
-const getVisibleProjects = () => {
-  let nextSlice = workData.slice(currentIndex, currentIndex + itemsPerPage);
+  const getVisibleProjects = () => {
+    let nextSlice = workData.slice(currentIndex, currentIndex + itemsPerPage);
+    if (nextSlice.length < itemsPerPage) {
+      const remaining = itemsPerPage - nextSlice.length;
+      const startPrev = Math.max(currentIndex - remaining, 0);
+      nextSlice = [...workData.slice(startPrev, currentIndex), ...nextSlice];
+    }
+    return nextSlice;
+  };
 
-  if (nextSlice.length < itemsPerPage) {
-    const remaining = itemsPerPage - nextSlice.length;
-    const startPrev = Math.max(currentIndex - remaining, 0);
-    nextSlice = [...workData.slice(startPrev, currentIndex), ...nextSlice];
-  }
+  const visibleProjects = getVisibleProjects();
 
-  return nextSlice;
-};
+  const handleNextImage = () => {
+    if (!selectedProject?.images) return;
+    setCurrentImageIndex((prev) =>
+      (prev + 1) % selectedProject.images.length
+    );
+  };
 
-const visibleProjects = getVisibleProjects();
-
+  const handlePrevImage = () => {
+    if (!selectedProject?.images) return;
+    setCurrentImageIndex((prev) =>
+      (prev - 1 + selectedProject.images.length) % selectedProject.images.length
+    );
+  };
 
   return (
     <>
@@ -37,14 +49,14 @@ const visibleProjects = getVisibleProjects();
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        id='projects'
-        className='w-full px-[12%] py-10 scroll-mt-20 justify-center align-items-center'
+        id="projects"
+        className="w-full px-[12%] py-10 scroll-mt-20 justify-center align-items-center"
       >
         <motion.h4
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className='text-center mb-2 text-lg font-ovo'
+          className="text-center mb-2 text-lg font-ovo"
         >
           My Portfolio
         </motion.h4>
@@ -52,7 +64,7 @@ const visibleProjects = getVisibleProjects();
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className='text-center text-5xl font-ovo'
+          className="text-center text-5xl font-ovo"
         >
           My Latest Projects
         </motion.h2>
@@ -61,35 +73,44 @@ const visibleProjects = getVisibleProjects();
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className='text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo'
+          className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo"
         >
-         With 6 years of experience in the industry, I have honed my skills in developing high-quality applications that meet the needs of clients and users alike.
+          With 6 years of experience in the industry, I have honed my skills in
+          developing high-quality applications that meet the needs of clients
+          and users alike.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className='grid [grid-template-columns:var(--auto-grid--)] gap-5 my-10 dark:text-black'
+          className="grid [grid-template-columns:var(--auto-grid--)] gap-5 my-10 dark:text-black"
         >
           {visibleProjects.map((project, index) => (
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
               key={index}
-              className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group'
+              className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
               style={{ backgroundImage: `url(${project.bgImage})` }}
             >
-              <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7'>
+              <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                 <div>
-                  <h2 className='font-semibold'>{project.name}</h2>
-                  <p className='text-sm text-gray-700'>{project.title}</p>
+                  <h2 className="font-semibold">{project.name}</h2>
+                  <p className="text-sm text-gray-700">{project.title}</p>
                 </div>
                 <div
-                  onClick={() => setSelectedProject(project)}
-                  className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition'
+                  onClick={() => {
+                    setSelectedProject(project);
+                    setCurrentImageIndex(0);
+                  }}
+                  className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
                 >
-                  <Image src={assets.send_icon} alt='Send Icon' className='w-5' />
+                  <Image
+                    src={assets.send_icon}
+                    alt="Send Icon"
+                    className="w-5"
+                  />
                 </div>
               </div>
             </motion.div>
@@ -101,14 +122,18 @@ const visibleProjects = getVisibleProjects();
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.1 }}
-          className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 
-          rounded-full py-3 px-10 mx-auto my-20 hover:bg-[var(--lightHover--)] duration-500 dark:text-white dark:border-white dark:hover:bg-[rgb(var(--darkHover-rgb))]'
+          className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 
+          rounded-full py-3 px-10 mx-auto my-20 hover:bg-[var(--lightHover--)] duration-500 dark:text-white dark:border-white dark:hover:bg-[rgb(var(--darkHover-rgb))]"
         >
           Show More
           <Image
-            src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold}
-            alt='Right Arrow'
-            className='w-4'
+            src={
+              isDarkMode
+                ? assets.right_arrow_bold_dark
+                : assets.right_arrow_bold
+            }
+            alt="Right Arrow"
+            className="w-4"
           />
         </motion.button>
       </motion.div>
@@ -135,22 +160,66 @@ const visibleProjects = getVisibleProjects();
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-3 right-4"
               >
-                <Image src={isDarkMode ? assets.close_white : assets.close_black} alt="Close" className="w-3 mb-1 cursor-pointer" />
+                <Image
+                  src={
+                    isDarkMode
+                      ? assets.close_white
+                      : assets.close_black
+                  }
+                  alt="Close"
+                  className="w-3 mb-1 cursor-pointer"
+                />
               </button>
 
-              <Image
-                src={selectedProject.bgImage}
-                alt={selectedProject.name}
-                width={800}
-                height={450}
-                className="rounded-lg mb-4"
-              />
+              {/* Image carousel */}
+              {selectedProject.images && selectedProject.images.length > 0 ? (
+                <div className="relative flex items-center justify-center">
+                  <motion.img
+                    key={currentImageIndex}
+                    src={selectedProject.images[currentImageIndex]}
+                    alt={`${selectedProject.name} - ${currentImageIndex + 1}`}
+                    className="rounded-lg mb-4 w-full"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -50 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                  {selectedProject.images.length > 1 && (
+                    <>
+                      <button
+                        onClick={handlePrevImage}
+                        className="absolute left-2 bg-black/50 text-white px-2 py-1 rounded-full"
+                      >
+                        ◀
+                      </button>
+                      <button
+                        onClick={handleNextImage}
+                        className="absolute right-2 bg-black/50 text-white px-2 py-1 rounded-full"
+                      >
+                        ▶
+                      </button>
+                    </>
+                  )}
+                </div>
+              ) : (
+                <Image
+                  src={selectedProject.bgImage}
+                  alt={selectedProject.name}
+                  width={800}
+                  height={450}
+                  className="rounded-lg mb-4"
+                />
+              )}
 
               <h2 className="text-2xl font-bold">{selectedProject.name}</h2>
               <p className="text-gray-500">{selectedProject.title}</p>
 
-              <p className="mt-4 text-gray-700 dark:text-white">{selectedProject.description}</p>
-              <p className="mt-3 text-gray-600 dark:text-white/80">{selectedProject.details}</p>
+              <p className="mt-4 text-gray-700 dark:text-white">
+                {selectedProject.description}
+              </p>
+              <p className="mt-3 text-gray-600 dark:text-white/80">
+                {selectedProject.details}
+              </p>
 
               <div className="mt-4">
                 <h4 className="font-semibold">Languages/Tools Used:</h4>
@@ -161,9 +230,9 @@ const visibleProjects = getVisibleProjects();
                 </ul>
               </div>
 
-              {selectedProject.video && (
-                <div className="mt-5">
-                  <h4 className="font-semibold mb-2">Project Demo:</h4>
+              <div className="mt-5">
+                <h4 className="font-semibold mb-2">Project Demo:</h4>
+                {selectedProject.video ? (
                   <a
                     href={selectedProject.video}
                     target="_blank"
@@ -172,19 +241,25 @@ const visibleProjects = getVisibleProjects();
                   >
                     Watch the demo video
                   </a>
-                </div>
-              )}
+                ) : (
+                  <p className="italic text-gray-500">Ongoing Project</p>
+                )}
+              </div>
 
-              {selectedProject.link && (
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-block bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition"
-                >
-                  Visit Site
-                </a>
-              )}
+              <div className="mt-5">
+                {selectedProject.link ? (
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition"
+                  >
+                    Visit Site
+                  </a>
+                ) : (
+                  <p className="italic text-gray-500">App is yet to be live</p>
+                )}
+              </div>
             </motion.div>
           </motion.div>
         )}

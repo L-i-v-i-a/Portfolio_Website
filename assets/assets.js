@@ -86,46 +86,63 @@ export const assets = {
 };
 
 export const workData = [
-    {
-        name: 'Landivia',
-        title: 'Mobile App',
-        description: 'A modern mobile application that provides AI powered solution for predicting prices of land across Nigeria.',
-        details: 'Landivia is a mobile platform that the user just needs to provide a few information and get the price of a land including its distance from schools, hospitals, and markets and also their and estimated time to get there. It also provides a map representation and you can always view your past predictions.',
-        languages: ['React Native', 'Flask', 'MongoDB'],
-        bgImage: '/work-1.jpg',
-        video: 'https://drive.google.com/file/d/1_b0OABx3tJ52DIMzLjPolXdZDvGo_Qyq/view?usp=drive_link',
-        link: ''
-    },
-    {
-        name: 'JScan',
-        title: 'Web App',
-        description: 'This is web app that helps doctors detect breast cancer in women',
-        details: 'This web app is designed to provide an intuitive user experience. The doctor just needs to provide the mammogram image, and the app will analyze it using advanced algorithms to detect any signs of breast cancer.',
-        languages: ['Django', 'Python', 'Random Forest', 'PostgreSQL'],
-        bgImage: '/work-5.png',
-        video: 'https://drive.google.com/file/d/1v24CYIHuVHYu2xLqGfQZa9j3jN5d1GDE/view?usp=drive_link',
-        link: ''
-    },
-    {
-        name: 'Zempaa',
-        title: 'Backend Projects',
-        description: 'This is an eccomerce platform that provides various AI solutions',
-        details: 'Zempaa has an AI chat bot called ZAI. ZAI is not like your normal AI chatbot, It answers general questions and relates them back to the web app. It also uses both text and voice commands and helps the users in cart enagements, finding products, placing orders and navigating through the site',
-        languages: [ 'Django', 'open AI', 'Next.js'],
-        bgImage: '/work-6.png',
-        video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
-        link: 'https://zempaa.com'
-    },
-    {
-        name: 'AI Model Training',
-        title: 'Price Prediction',
-        description: 'This is an AI model that was trained with XGBoost, a machine learning algorithm',
-        details: 'This project focused on the training of the model with over 100000 values of a land price dataset to achieve an accuracy of 98% whixh means it is quite reliable',
-        languages: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'],
-        bgImage: '/work-7.png',
-        video: 'https://drive.google.com/file/d/1hSuFJgJQbNK8Ve09DFPK_WO6t140NizV/view?usp=drive_link',
-        link: ''
-    }
+  {
+    name: 'Landivia',
+    title: 'Mobile App',
+    description: 'A modern mobile application that provides AI powered solution for predicting prices of land across Nigeria.',
+    details: 'Landivia is a mobile platform that the user just needs to provide a few information and get the price of a land including its distance from schools, hospitals, and markets and also their and estimated time to get there. It also provides a map representation and you can always view your past predictions.',
+    languages: ['React Native', 'Flask', 'MongoDB'],
+    bgImage: '/work-1.jpg',
+    images: [
+      '/work-1a.jpg',
+      '/work-1b.jpg',
+      '/work-1c.jpg'
+    ],
+    video: 'https://drive.google.com/file/d/1_b0OABx3tJ52DIMzLjPolXdZDvGo_Qyq/view?usp=drive_link',
+    link: ''
+  },
+  {
+    name: 'JScan',
+    title: 'Web App',
+    description: 'This is web app that helps doctors detect breast cancer in women',
+    details: 'This web app is designed to provide an intuitive user experience. The doctor just needs to provide the mammogram image, and the app will analyze it using advanced algorithms to detect any signs of breast cancer.',
+    languages: ['Django', 'Python', 'Random Forest', 'PostgreSQL'],
+    bgImage: '/work-5.jpg',
+    images: [
+      '/work-5a.jpg',
+      '/work-5b.jpg'
+    ],
+    video: 'https://drive.google.com/file/d/1v24CYIHuVHYu2xLqGfQZa9j3jN5d1GDE/view?usp=drive_link',
+    link: ''
+  },
+  {
+    name: 'Zempaa',
+    title: 'Backend Projects',
+    description: 'This is an eccomerce platform that provides various AI solutions',
+    details: 'Zempaa has an AI chat bot called ZAI. ZAI is not like your normal AI chatbot, It answers general questions and relates them back to the web app. It also uses both text and voice commands and helps the users in cart enagements, finding products, placing orders and navigating through the site',
+    languages: ['Django', 'open AI', 'Next.js'],
+    bgImage: '/work-6.png',
+    images: [
+      '/work-6a.png',
+      '/work-6b.png'
+    ],
+    video: 'https://drive.google.com/file/d/17s4jjoFu2ZIkDhpnNfhqVI7AaA-sCarR/view?usp=sharing',
+    link: 'https://zempaa.com'
+  },
+  {
+    name: 'AI Model Training',
+    title: 'Price Prediction',
+    description: 'This is an AI model that was trained with XGBoost, a machine learning algorithm',
+    details: 'This project focused on the training of the model with over 100000 values of a land price dataset to achieve an accuracy of 98% whixh means it is quite reliable',
+    languages: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas'],
+    bgImage: '/work-7.png',
+    images: [
+      '/work-7a.png',
+      '/work-7b.png'
+    ],
+    video: 'https://drive.google.com/file/d/1hSuFJgJQbNK8Ve09DFPK_WO6t140NizV/view?usp=drive_link',
+    link: ''
+  }
 ];
 
 export const serviceData = [
